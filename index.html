@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    
+    <header>
+      <div class="logo">
+        <img src="image/logobrend.png" alt="Logo Toko" />
+        <h1>Toko Online</h1>
+      </div>
+      <div class="menu-btn" onclick="toggleSidebar()">&#9776; Menu</div>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Cari produk..." oninput="cariProduk()" />
+      </div>
+      <div class="header-icons">
+        <div class="wishlist-icon" onclick="bukaWishlist()">
+          ❤️ <span id="wishlist-count">0</span>
+        </div>
+        <div class="cart-icon" onclick="bukaKeranjang()">
+          🛒 <span id="cart-count">0</span>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">&times;</a>
+      <a href="#produk">Produk</a>
+      <a href="caraorder.html">Cara Order</a>
+      <a href="Tentangaplikasi.html">Tentang aplikasi</a>
+      <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+        🌙 Dark Mode
+      </div>
+    </div>
+
+    <!-- Konten Utama -->
+    <section id="produk">
+      <div class="produk-container">
+        <!-- Produk 1 -->
+<div class="produk-item" id="produk1">
+  <div class="produk-image-container">
+    <img id="produk1-img" src="image/kaosmerah.jpg" alt="Kaos CRS12 Merah" onclick="bukaDetailProduk('produk1')">
+    <div class="click-indicator">Klik untuk detail</div>
+  </div>
+  <h3>Kaos CRS12</h3>
+  <p>Deskripsi singkat tentang kaos ini.</p>
+  <label for="warna1">Warna:</label>
+  <select id="warna1" onchange="ubahGambarProduk('produk1-img', this.value, 'Produk1')">
+    <option value="Merah">Merah</option>
+    <option value="Biru">Biru</option>
+    <option value="Hitam">Hitam</option>
+  </select>
+  <label for="ukuran1">Ukuran:</label>
+  <select id="ukuran1">
+    <option value="S - Rp50000">S - Rp50.000</option>
+    <option value="M - Rp60000">M - Rp60.000</option>
+    <option value="L - Rp70000">L - Rp70.000</option>
+  </select>
+  <button onclick="tambahKeKeranjang('Kaos CRS12', '1', 'warna1', 'ukuran1')">Beli</button>
+  <button onclick="tambahKeWishlist('Kaos CRS12')">❤️ Wishlist</button>
+  <div class="rating-rata-rata">
+    <span>Rating: </span>
+    <span id="rating-rata-rata-produk1">0</span>
+  </div>
+</div>
+
+<!-- Produk 2 -->
+<div class="produk-item" id="produk2">
+  <div class="produk-image-container">
+    <img id="produk2-img" src="image/kaosabu.jpg" alt="Kaos CRS13 Abu-abu" onclick="bukaDetailProduk('produk2')" />
+    <div class="click-indicator">Klik untuk detail</div>
+  </div>
+  <h3>Kaos CRS13</h3>
+  <p>Deskripsi singkat tentang kaos ini.</p>
+  <label for="warna2">Warna:</label>
+  <select id="warna2" onchange="ubahGambarProduk('produk2-img', this.value, 'Produk2')">
+    <option value="Abu-abu">Abu-abu</option>
+    <option value="Putih">Putih</option>
+    <option value="Hitam">Hitam</option>
+  </select>
+  <label for="ukuran2">Ukuran:</label>
+  <select id="ukuran2">
+    <option value="S - Rp50000">S - Rp50.000</option>
+    <option value="M - Rp60000">M - Rp60.000</option>
+    <option value="L - Rp70000">L - Rp70.000</option>
+  </select>
+  <button onclick="tambahKeKeranjang('Kaos CRS13', '2', 'warna2', 'ukuran2')">Beli</button>
+  <button onclick="tambahKeWishlist('Kaos CRS13')">❤️ Wishlist</button>
+  <div class="rating-rata-rata">
+    <span>Rating: </span>
+    <span id="rating-rata-rata-produk2">0</span>
+  </div>
+</div>
+
+<!-- Produk 3 -->
+<div class="produk-item" id="produk3">
+  <div class="produk-image-container">
+    <img id="produk3-img" src="image/abu.jpg" alt="Kaos CRS14 Abu-abu" onclick="bukaDetailProduk('produk3')" />
+    <div class="click-indicator">Klik untuk detail</div>
+  </div>
+  <h3>Kaos CRS14</h3>
+  <p>Deskripsi singkat tentang kaos ini.</p>
+  <label for="warna3">Warna:</label>
+  <select id="warna3" onchange="ubahGambarProduk('produk3-img', this.value, 'Produk3')">
+    <option value="Abu-abu">Abu-abu</option>
+    <option value="Cream">Cream</option>
+    <option value="Hitam">Hitam</option>
+  </select>
+  <label for="ukuran3">Ukuran:</label>
+  <select id="ukuran3">
+    <option value="S - Rp50000">S - Rp50.000</option>
+    <option value="M - Rp60000">M - Rp60.000</option>
+    <option value="L - Rp70000">L - Rp70.000</option>
+  </select>
+  <button onclick="tambahKeKeranjang('Kaos CRS14', '3', 'warna3', 'ukuran3')">Beli</button>
+  <button onclick="tambahKeWishlist('Kaos CRS14')">❤️ Wishlist</button>
+  <div class="rating-rata-rata">
+    <span>Rating: </span>
+    <span id="rating-rata-rata-produk3">0</span>
+  </div>
+</div>
+
+<!-- Produk 4 -->
+<div class="produk-item" id="produk4">
+  <div class="produk-image-container">
+    <img id="produk4-img" src="image/mesin1.png" alt="Mesin 1" onclick="bukaDetailProduk('produk4')" />
+    <div class="click-indicator">Klik untuk detail</div>
+  </div>
+  <h3>Mesin CRS14</h3>
+  <p>Deskripsi singkat tentang mesin ini.</p>
+  <label for="warna4">Tipe:</label>
+  <select id="warna4" onchange="ubahGambarProduk('produk4-img', this.value, 'Produk4')">
+    <option value="Mesin 1">Mesin 1</option>
+    <option value="Mesin 2">Mesin 2</option>
+    <option value="Mesin 3">Mesin 3</option>
+  </select>
+  <label for="ukuran4">Ukuran:</label>
+  <select id="ukuran4">
+    <option value="S - Rp10000">S - Rp10.000</option>
+    <option value="M - Rp90000">M - Rp90.000</option>
+    <option value="L - Rp70000">L - Rp70.000</option>
+  </select>
+  <button onclick="tambahKeKeranjang('Mesin CRS14', '4', 'warna4', 'ukuran4')">Beli</button>
+  <button onclick="tambahKeWishlist('Mesin CRS14')">❤️ Wishlist</button>
+  <div class="rating-rata-rata">
+    <span>Rating: </span>
+    <span id="rating-rata-rata-produk4">0</span>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <!-- Modal Detail Produk -->
+    <div id="detail-produk-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="tutupDetailProduk()">&times;</span>
+        <h2 id="detail-produk-nama"></h2>
+        <div class="slider-container">
+          <div class="slider">
+            <img id="slider-gambar" src="" alt="Gambar Produk" />
+          </div>
+          <button class="slider-btn prev" onclick="geserGambar(-1)">&#10094;</button>
+          <button class="slider-btn next" onclick="geserGambar(1)">&#10095;</button>
+        </div>
+        <p id="detail-produk-deskripsi"></p>
+        <div class="rating-komentar">
+          <h3>Rating dan Ulasan</h3>
+          <div class="rating-stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+          <textarea id="komentar-input" placeholder="Tulis ulasan..."></textarea>
+          <button onclick="submitKomentar()">Kirim Ulasan</button>
+          <div id="komentar-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Keranjang -->
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="tutupKeranjang()">&times;</span>
+        <h2>Keranjang Belanja</h2>
+        <div id="cart-items"></div>
+        <p>Total: <span id="cart-total">Rp0</span></p>
+        <button onclick="tampilkanFormCheckout()">Checkout</button>
+      </div>
+    </div>
+
+<!-- Modal Form Checkout -->
+<div id="checkout-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="tutupCheckout()">&times;</span>
+    <h2>Informasi Pengiriman</h2>
+    <div class="form-container">
+      <p>Masukkan Alamat Pengiriman:</p>
+      <input type="text" id="nama" placeholder="Nama Lengkap" />
+      <input type="text" id="kota" placeholder="Kota" />
+      <input type="text" id="provinsi" placeholder="Provinsi" />
+      <input type="text" id="alamat" placeholder="Alamat Lengkap" />
+      <input type="text" id="nomorhp" placeholder="Nomor HP" />
+      <p>Pilih metode pembayaran:</p>
+      <button onclick="prosesPembayaran('COD')">COD</button>
+      <button onclick="prosesPembayaran('Dana')">Dana</button>
+      <button onclick="tutupCheckout()">Batal</button>
+    </div>
+  </div>
+</div>
+
+    <!-- Modal Wishlist -->
+    <div id="wishlist-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="tutupWishlist()">&times;</span>
+        <h2>Wishlist</h2>
+        <div id="wishlist-items"></div>
+      </div>
+    </div>
+
+    <!-- Notifikasi -->
+    <div id="notifikasi"></div>
+
+    <div class="filter-container">
+      <select id="filter-kategori">
+        <option value="semua">Semua Kategori</option>
+        <option value="kaos">Kaos</option>
+        <option value="mesin">Mesin</option>
+      </select>
+      <select id="sort-by">
+        <option value="harga-asc">Harga Termurah</option>
+        <option value="harga-desc">Harga Termahal</option>
+        <option value="rating">Rating Tertinggi</option>
+      </select>
+    </div>
+
+    <div id="riwayat-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="tutupRiwayat()">&times;</span>
+        <h2>Riwayat Transaksi</h2>
+        <div id="riwayat-list"></div>
+      </div>
+    </div>
+
+    <div id="live-chat">
+      <a href="https://wa.me/6285694556026?text=Halo%20Admin%2c" target="_blank">
+        💬 Live Chat
+      </a>
+    </div> 
+
+    <!-- WhatsApp Chat Button -->
+    <div id="whatsapp-chat">
+      <a href="https://wa.me/6285694556026?text=Halo%20Admin%2C%20saya%20butuh%20bantuan%20terkait%20produk%20di%20Toko%20Online%20Anda." target="_blank" rel="noopener noreferrer">
+        <img src="image/iconwa.png" alt="Chat on WhatsApp" />
+        <span>Butuh Bantuan?</span>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Toko Online. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
